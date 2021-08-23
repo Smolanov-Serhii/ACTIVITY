@@ -1,0 +1,60 @@
+.schedule {
+    background: #fff;
+    width: 100%;
+    height: auto;
+    .cascoon{
+        padding-bottom: 60px;
+    }
+    &__wrap-h2 {
+        margin: 100px auto 80px auto;
+        h2{
+            margin: 0;
+        }
+    }
+    &__wrap-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+    }
+    &__card {
+        width: calc(50% - 15px);
+        justify-content: space-between;
+        border: none;
+        margin-bottom: 30px;
+    }
+    &__wrap__big-but {
+        width: 100%;
+    }
+}
+
+.ticket-price {
+    width: calc(100% - 214px);
+    padding: 30px 26px 31px 22px;
+    h3 {
+        font-family: 'Futura PT';
+        font-weight: 500;
+        margin-top: 0;
+        margin-bottom: 27px;
+    }
+
+    &__city {
+        font-family: 'Futura PT';
+        font-weight: 400;
+        display: flex;
+        justify-content: space-between;
+        color:#092C6D;
+        font-size: 14px;
+        margin: 2px 0 0 0;
+        &:first-child{
+            margin-top: 0;
+        }
+    }
+}
+.card-city {
+    width: 214px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height:  100%;
+}

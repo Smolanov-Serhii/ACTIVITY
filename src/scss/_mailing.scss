@@ -1,0 +1,44 @@
+.mailing {
+    width: 100%;
+    background: radial-gradient(ellipse, #40A6D1, #297DB6);
+    height: auto;
+    &__text {
+        font-size: 18px;
+        color: #fff;
+        font-family: 'Futura PT';
+        font-weight: 400;
+        margin: 0;
+        h2 {
+            color: #fff;
+            font-family: 'Rubik';
+            margin: auto 0 13px 0;
+            font-size: 24px;
+            text-align: left;
+        }
+
+    }
+    &__form {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        &__input {
+            width: 260px;
+            height: 50px;
+            border-radius: 4px;
+            border: 1px solid #003599;
+            text-align: start;
+        }
+    }
+}
+
+.wrap__tx-form {
+    margin-left: 11%;
+    width: 440px;
+}
+
+.wrap__svg-letter {
+    display: flex;
+    img {
+        margin-top: 20px;
+    }
+}

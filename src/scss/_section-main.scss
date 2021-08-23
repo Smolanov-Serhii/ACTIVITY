@@ -1,0 +1,246 @@
+.main {
+    //margin-top: 90px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    .wrap-h1 {
+        width: 100%;
+        max-width: 470px;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        margin: 119px 0 93px 0;
+        h1{
+            line-height: 140%;
+        }
+    }
+    &__wrap-buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    &__button {
+        width: 20%;
+        border: 2px solid white;
+        background-color: #fff;
+        border-radius: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        &:hover{
+            .main__button__content{
+                background-color: #FF3D38;
+            }
+            .main__button__active{
+                span{
+                    color: #B9110D;
+                }
+                background-color: #fff;
+            }
+        }
+        &__content {
+            background-color: #B9110D;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 2px;
+            padding: 17px;
+            width: 100%;
+            span {
+                color: #fff;
+                font-family: 'Rubik', sans-serif;
+                font-size: 18px;
+            }
+        }
+        &__active {
+            span{
+                color: #B9110D;
+            }
+            background-color: #fff;
+
+        }
+    }
+    &__wrap-form-list {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        padding: 52px 30px;
+        background: rgba(0, 0, 0, 0.26);
+        margin: 3px 0 0 0;
+        border-radius: 3px;
+        #wpfBlock_5, #wpfBlock_11, #wpfBlock_17{
+            margin-right: 20px;
+            .label{
+                margin-left: 20px;
+            }
+        }
+        .wpfFilterButtons{
+            .wpfFilterButton{
+                margin: 0;
+            }
+        }
+        .filter-naprav{
+            .direct-icon{
+                background-image: url(../../images/direct-icon.svg);
+                background-repeat: no-repeat;
+                background-size: 100%;
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top: 15px;
+                left: calc(50% - 10px);
+                z-index: 100;
+            }
+            .wpfFilterWrapper:first-child{
+                .selectric{
+                    border-radius: 4px 0 0 4px;
+                }
+            }
+            .wpfFilterWrapper:last-child{
+                .selectric{
+                    border-radius: 0 4px 4px 0;
+                }
+            }
+
+        }
+        .filter-toback{
+            .toback-icon{
+                background-image: url(../../images/calendar-icon.svg);
+                background-repeat: no-repeat;
+                background-size: 100%;
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top: 15px;
+                left: calc(50% - 10px);
+                z-index: 100;
+            }
+            .wpfFilterWrapper:first-child{
+                .selectric{
+                    border-radius: 4px 0 0 4px;
+                }
+            }
+            .wpfFilterWrapper:last-child{
+                .selectric{
+                    border-radius: 0 4px 4px 0;
+                }
+            }
+        }
+        .filter-naprav, .filter-toback{
+            display: flex;
+            box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+            margin-right: 20px;
+            position: relative;
+
+            b.button{
+                display: none;
+            }
+            .selectric{
+                .label{
+                    margin-left: 20px;
+                    margin-right: 20px;
+                }
+            }
+            #wpfBlock_2, #wpfBlock_4, #wpfBlock_8, #wpfBlock_10, #wpfBlock_14, #wpfBlock_16{
+                .selectric{
+                    .label{
+                        text-align: right;
+                    }
+                }
+                li{
+                    text-align: right;
+                }
+            }
+        }
+        .wpfFilterWrapper{
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0!important;
+        }
+        .wpfFilterWrapper ul:not(.wpfButtonsFilter) li{
+            padding-left: 20px!important;
+            padding-right: 20px!important;
+        }
+        .main__wrap-form{
+            display: none;
+            &.active-form{
+                display: block;
+            }
+            .wpfMainWrapper{
+                display: flex;
+            }
+        }
+
+        .big-small__but_content {
+            font-family: 'Montserrat', sans-serif;
+        }
+    }
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    &__input {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background: #fff;
+        border-radius: 4px;
+        height: 50px;
+        border: 1px solid rgba(9, 44, 109, 0.6);
+        &__city {
+            width: 380px;
+        }
+    }
+}
+
+.form__input :last-child {
+    text-align: end;
+}
+
+.form__input :first-child {
+    text-align: start;
+}
+
+.input {
+    outline: 0;
+    border: none;
+    font-family: 'Futura PT';
+    font-weight: 400;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    &::placeholder{
+        color: #b7b6c6;
+    }
+
+}
+
+.input-city {
+    width: 140px;
+}
+
+.input__roundtrip {
+    width: 90px;
+}
+
+.form__input__roundtrip {
+    width: 270px;
+}
+
+.form__input__passenger-class {
+    width: 180px;
+}
+
+.form__input__passenger-class :last-child {
+    width: 50px;
+}
+
+.form__input__passenger-class :first-child {
+    width: 70px;
+}
+
