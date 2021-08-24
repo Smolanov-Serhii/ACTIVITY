@@ -68,4 +68,19 @@ $(document).ready(function($) {
             NeedElem.addClass('active');
         });
     }
+
+    if ($('.timetable__list').length){
+        $('.timetable__item').on('click', function(){
+            $('.timetable__item').removeClass('active');
+            $(this).addClass('active');
+        });
+    }
+
+    $("a.header__nav-lnk").on("click", function(e){
+        e.preventDefault();
+        var anchor = $(this).attr('href');
+        $('html, body').stop().animate({
+            scrollTop: $(anchor).offset().top - 0
+        }, 800);
+    });
 });
