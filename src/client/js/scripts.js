@@ -12,11 +12,31 @@ $(document).ready(function($) {
                 crossFade: true
             },
             pagination: {
-                el: ".swiper-pagination",
+                el: ".content-slider__container .swiper-pagination",
                 clickable: true,
             }
         });
     }
+
+    if ($('.tabs__content-slider').length){
+        var MainSlider = new Swiper('.tabs__content-slider', {
+            slidesPerView: 1,
+            loop: true,
+            observer: true,
+            spaceBetween: 30,
+            observeParents: true,
+            lazy: true,
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            pagination: {
+                el: ".tabs__content-slider .swiper-pagination",
+                clickable: true,
+            }
+        });
+    }
+
     AOS.init({
         // Global settings:
         disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
@@ -37,4 +57,15 @@ $(document).ready(function($) {
         anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 
     });
+
+    if ($('.tabs').length){
+        $('.tabs .tabs__nav-item').on('click', function(){
+            let ClickedNav = $(this).data('tab');
+            let NeedElem = $( ".tabs .tabs__content-item[data-content='"+ClickedNav+"']" );
+            $('.tabs .tabs__nav-item').removeClass('active');
+            $(this).addClass('active');
+            $('.tabs__content .tabs__content-item').removeClass('active');
+            NeedElem.addClass('active');
+        });
+    }
 });

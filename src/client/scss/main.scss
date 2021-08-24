@@ -30,6 +30,7 @@ body{
   font-size: 3.6rem;
   line-height: 4.4rem;
   letter-spacing: 0.075em;
+  text-transform: uppercase;
 }
 .button{
   display: inline-block;
@@ -142,6 +143,10 @@ body{
     }
     &-item{
       margin-bottom: 0;
+      padding-left: 0;
+      &:before{
+        display: none;
+      }
     }
     &-lnk{
       font-size: 1.6rem;
@@ -314,18 +319,18 @@ body{
     left: calc(50% + 75px);
     text-align: left;
   }
-  .swiper-pagination-bullet{
-    background: #FFFFFF;
-    opacity: 0.3;
-    height: 10px;
-    border-radius: 5px;
-    transition: 0.2s;
-  }
-  .swiper-pagination-bullet-active{
-    background-color: white;
-    opacity: 1;
-    width: 26px;
-  }
+}
+.swiper-pagination-bullet{
+  background: #FFFFFF;
+  opacity: 0.3;
+  height: 10px;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+.swiper-pagination-bullet-active{
+  background-color: white;
+  opacity: 1;
+  width: 26px;
 }
 .process{
   background-color: $main-bg;
@@ -373,7 +378,6 @@ body{
       position: absolute;
       left: 0;
       bottom: -193px;
-      transform: rotate(90deg);
     }
     &-perf-right{
       position: absolute;
@@ -502,6 +506,253 @@ body{
       }
       &:hover ~ svg .row-8{
         stroke: #6E2AFF;
+      }
+    }
+  }
+}
+.pluses{
+  padding-top: 8rem;
+  position: relative;
+  &__design{
+    &-worm{
+      position: absolute;
+      left: 0;
+      top: 255px;
+    }
+    &-ring{
+      position: absolute;
+      right: 0;
+      top: 461px;
+    }
+    &-perf{
+      position: absolute;
+      right: 0;
+      top: 190px;
+    }
+  }
+  &__title{
+    text-align: center;
+  }
+  &__list{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 3.4rem;
+  }
+  &__item{
+    width: calc(25% - 10px);
+    text-align: center;
+    margin-bottom: 3.8rem;
+    &-title{
+      font-weight: 500;
+      font-size: 1.8rem;
+      line-height: 2.5rem;
+      text-align: center;
+      letter-spacing: 0.075em;
+      text-transform: uppercase;
+      color: #132238;
+      margin-bottom: 1.4rem;
+    }
+    &-desc{
+      font-size: 1.6rem;
+      line-height: 119.9%;
+      text-align: center;
+      color: #627289;
+    }
+  }
+  &__icon{
+    height: 162px;
+    width: auto;
+    margin-bottom: 2.4rem;
+  }
+}
+.trainings{
+  position: relative;
+  &__design{
+    &-ring{
+      position: absolute;
+      left: 0;
+      top: 190px;
+    }
+    &-perf{
+      position: absolute;
+      left: 0;
+      top: 300px;
+    }
+    &-square{
+      position: absolute;
+      right: 0;
+      top: 131px;
+    }
+    &-worm{
+      position: absolute;
+      right: 100px;
+      top: 433px;
+    }
+  }
+  &__about{
+    padding-top: 5.3rem;
+    &-content{
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    &-text{
+      padding-top: 6.1rem;
+    }
+    &-title{
+      max-width: 550px;
+      margin-bottom: 3.2rem;
+    }
+  }
+}
+.tabs{
+  margin-top: 4.8rem;
+  position: relative;
+  padding-bottom: 2rem;
+  &__all{
+    text-align: center;
+  }
+  &__more{
+    background: linear-gradient(89.14deg, #6E2AFF 0.76%, #7ADBEE 99.25%);
+    border-radius: 10px;
+    display: inline-block;
+    margin: auto;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 101.4%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    padding: 2.2rem 5rem 1.8rem 5rem;
+    cursor: pointer;
+  }
+  &__design{
+    &-worm{
+      position: absolute;
+      top: 357px;
+      left: 0;
+    }
+    &-ring{
+      position: absolute;
+      left: 84px;
+      top: 517px;
+    }
+    &-perf{
+      position: absolute;
+      right: 0;
+      top: 186px;
+    }
+  }
+  &__container{
+
+  }
+  &__nav{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &-item{
+      position: relative;
+      font-weight: 600;
+      font-size: 1.8rem;
+      letter-spacing: 0.075em;
+      text-transform: uppercase;
+      color: #132238;
+      padding: 23px 75px 20px 75px;
+      background: padding-box #fff;
+      border: 2px solid transparent;
+      border-radius: 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+      &:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        margin: -2px;
+        border-radius: inherit;
+        background: linear-gradient(89.14deg,#6e2aff .76%,#7adbee 99.25%);
+        transition: 0.2s;
+      }
+      &.active{
+        background-color: transparent;
+        color: white;
+        &:before{
+          background: linear-gradient(89.14deg, #6E2AFF 0.76%, #7ADBEE 493.19%);
+        }
+      }
+    }
+  }
+  &__content{
+    margin-top: 5rem;
+    margin-bottom: 5.7rem;
+    &-slider{
+      box-shadow: 0px 30px 40px -26px rgba(233, 0, 97, 0.21);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    &-param{
+      margin-top: -170px;
+      padding: 197px 20px 2px 41px;
+      margin-right: -20px;
+      margin-left: 20px;
+      border: 1px solid #BECBDF;
+      border-radius: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      > div{
+        width: 50%;
+        margin-bottom: 2.6rem;
+      }
+    }
+    &-name{
+      font-size: 1.8rem;
+      line-height: 119.9%;
+      color: #132238;
+      margin-bottom: 0.2rem;
+    }
+    &-value{
+      font-weight: 800;
+      font-size: 1.8rem;
+      line-height: 2.2rem;
+      letter-spacing: 0.075em;
+      color: #132238;
+    }
+    &-info{
+      width: calc(50% - 24px);
+      .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+        bottom: 2.2rem;
+        left: 50px;
+        text-align: left;
+      }
+      .swiper-slide{
+        img{
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+    &-item{
+      display: none;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      &.active{
+        display: flex;
+      }
+    }
+    &-desc{
+      width: calc(50% - 24px);
+      h3{
+        margin-top: 4.4rem;
+        margin-bottom: 2rem;
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 119.9%;
+        text-transform: uppercase;
+        color: #132238;
       }
     }
   }
