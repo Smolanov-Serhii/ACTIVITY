@@ -224,6 +224,7 @@ body{
 .content-slider{
   padding-top: 8rem;
   overflow-x: hidden;
+  overflow-x: hidden;
   &__container{
     position: relative;
     overflow: visible;
@@ -315,10 +316,13 @@ body{
       height: 100%;
     }
   }
-  .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+  .swiper-pagination-bullets{
     bottom: 11.2rem;
     left: calc(50% + 75px);
     text-align: left;
+    .swiper-pagination-bullet{
+      margin-right: 13px;
+    }
   }
 }
 .swiper-pagination-bullet{
