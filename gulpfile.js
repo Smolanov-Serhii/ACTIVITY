@@ -86,17 +86,17 @@ gulp.task('delClient', () => {
 
 //Таск для отслеживания изменений в файлах
 gulp.task('watchClient', () => {
-   // browserSync.init({
-   //    server: {
-   //       baseDir: "./"
-   //    }
-   // });
+   browserSync.init({
+      server: {
+         baseDir: "./"
+      }
+   });
    //Следить за файлами со стилями с нужным расширением
    gulp.watch('./src/client/scss/**/*.scss', gulp.series('sassClient'))
    //Следить за JS файлами
    gulp.watch('./src/client/js/**/*.js', gulp.series('scriptsClient'));
    //При изменении HTML запустить синхронизацию
-   // gulp.watch("./*.html").on('change', browserSync.reload);
+   gulp.watch("./*.html").on('change', browserSync.reload);
 });
 
 //Таск по умолчанию, Запускает del, styles, scripts и watch

@@ -19,7 +19,7 @@ $(document).ready(function($) {
     }
 
     if ($('.tabs__content-slider').length){
-        var MainSlider = new Swiper('.tabs__content-slider', {
+        var TabsSlider = new Swiper('.tabs__content-slider', {
             slidesPerView: 1,
             loop: true,
             observer: true,
@@ -32,6 +32,37 @@ $(document).ready(function($) {
             },
             pagination: {
                 el: ".tabs__content-slider .swiper-pagination",
+                clickable: true,
+            }
+        });
+    }
+
+    if ($('section.trainer').length){
+        var TrainerSlider = new Swiper('.trainer__swiper', {
+            slidesPerView: 3,
+            loop: true,
+            observer: true,
+            spaceBetween: 20,
+            observeParents: true,
+            lazy: true,
+            centeredSlides: true,
+            pagination: {
+                el: "section.trainer .swiper-pagination",
+                clickable: true,
+            }
+        });
+    }
+
+    if ($('section.galery').length){
+        var GalerySlider = new Swiper('.galery__container', {
+            slidesPerView: 3,
+            loop: true,
+            observer: true,
+            spaceBetween: 20,
+            observeParents: true,
+            lazy: true,
+            pagination: {
+                el: "section.galery .swiper-pagination",
                 clickable: true,
             }
         });
@@ -83,4 +114,70 @@ $(document).ready(function($) {
             scrollTop: $(anchor).offset().top - 0
         }, 800);
     });
+
+    if ($('#map').length){
+        if (  jQuery(window).width() >= 1024 ) {
+
+            var FirstCoord = 55.740541;
+            var SecondCoord = 37.632999;
+
+            var CenterFirstCoord = 55.7405414;
+            var CenterSecondCoord = 37.632999;
+        } else {
+            var FirstCoord = 55.740541;
+            var SecondCoord = 37.632999;
+
+            var CenterFirstCoord = FirstCoord;
+            var CenterSecondCoord = SecondCoord;
+        }
+        ymaps.ready(function () {
+
+            var IconUrl = $('#map').data('icon');
+            var myMap = new ymaps.Map('map', {
+                    center: [CenterFirstCoord, CenterSecondCoord],
+                    controls: [],
+                    zoom: 14
+                }, {
+                    searchControlProvider: true
+                }),
+
+                // Создаём макет содержимого.
+                MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+                    '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+                ),
+
+                myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                }, {
+                    // Опции.
+                    // Необходимо указать данный тип макета.
+                    // Своё изображение иконки метки.
+                    iconImageHref: "",
+                    // Размеры метки.
+                    iconImageSize: [0, 0],
+                    // Смещение левого верхнего угла иконки относительно
+                    // её "ножки" (точки привязки).
+                }),
+                myPlacemarkWithContent = new ymaps.Placemark([FirstCoord, SecondCoord], {
+                }, {
+                    // Опции.
+                    // Необходимо указать данный тип макета.
+                    iconLayout: 'default#imageWithContent',
+                    // Своё изображение иконки метки.
+                    iconImageHref: IconUrl,
+                    // Размеры метки.
+                    iconImageSize: [200, 60],
+                    // Смещение левого верхнего угла иконки относительно
+                    // её "ножки" (точки привязки).
+                    iconImageOffset: [-100, -60],
+                    // Смещение слоя с содержимым относительно слоя с картинкой.
+                    iconContentOffset: [-100, -30],
+                    // Макет содержимого.
+                    iconContentLayout: MyIconContentLayout
+                });
+            myMap.behaviors.disable('scrollZoom');
+            myMap.geoObjects
+                // .add(myPlacemark)
+                .add(myPlacemarkWithContent);
+        });
+    }
 });
