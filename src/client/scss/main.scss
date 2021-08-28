@@ -144,11 +144,32 @@ body{
     &-item{
       margin-bottom: 0;
       padding-left: 0;
+      position: relative;
+      overflow-x: hidden;
       &:before{
-        display: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        content: "";
+        display: block;
+        border-radius: 0;
+        background: linear-gradient(89.14deg, #6E2AFF 0.76%, #7ADBEE 99.25%);
+        transform: translateX(-100%);
+        opacity: 0;
+        transition: 0.2s;
+      }
+      &:hover{
+        transition: 0.2s;
+        &:before{
+          transform: translateX(0);
+          opacity: 1;
+        }
       }
     }
     &-lnk{
+      position: relative;
       font-size: 1.6rem;
       line-height: 2rem;
       color: #FFFFFF;
@@ -343,6 +364,27 @@ body{
   &__container{
     padding-top: 73px;
     padding-bottom: 86px;
+  }
+  &__arrow{
+    position: relative;
+  }
+  &__desc{
+    position: absolute;
+    top: 28px;
+    left: 0;
+    text-align: left;
+    p{
+      max-width: 420px;
+      font-size: 1.6rem;
+      line-height: 153.9%;
+      color: #BECBDF;
+      padding: 0;
+      margin: 0;
+    }
+    svg{
+      margin-left: 210px;
+      margin-top: 15px;
+    }
   }
   &__title{
     background: linear-gradient(89.14deg, #6E2AFF 0.76%, #7ADBEE 99.25%);
@@ -729,10 +771,13 @@ body{
     }
     &-info{
       width: calc(50% - 24px);
-      .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+      .swiper-pagination{
         bottom: 2.2rem;
         left: 50px;
         text-align: left;
+        .swiper-pagination-bullet{
+          margin-right: 13px;
+        }
       }
       .swiper-slide{
         img{
@@ -860,6 +905,7 @@ body{
     padding: 3.8rem 5.1rem 0.1rem 33rem;
     position: relative;
     margin-bottom: 2rem;
+    cursor: pointer;
     &:hover{
       &:after{
         background-image: url("../../img/templates/timetable/points_active.svg");
@@ -935,6 +981,31 @@ body{
   padding-top: 7.3rem;
   padding-bottom: 8.6rem;
   &__design{
+    &-leftperf{
+      position: absolute;
+      top: -88px;
+      left: 0;
+    }
+    &-ring{
+      position: absolute;
+      top: 415px;
+      left: 0;
+    }
+    &-square{
+      position: absolute;
+      top: 71px;
+      right: 185px;
+    }
+    &-worm{
+      position: absolute;
+      right: 0;
+      top: 220px;
+    }
+    &-rightperf{
+      position: absolute;
+      right: 0;
+      bottom: 150px;
+    }
 
   }
   &__container{
@@ -1060,6 +1131,29 @@ body{
 .price{
   padding-top: 8rem;
   padding-bottom: 7.4rem;
+  position: relative;
+  &__design{
+    &-worm{
+      position: absolute;
+      top: 404px;
+      right: 100px;
+    }
+    &-perf{
+      position: absolute;
+      left: 0;
+      top: 324px;
+    }
+    &-ring{
+      position: absolute;
+      left: 0;
+      top: 222px;
+    }
+    &-square{
+      position: absolute;
+      right: 0;
+      top: 144px;
+    }
+  }
   &__title{
     text-align: center;
   }
@@ -1249,7 +1343,26 @@ body{
   padding-top: 8rem;
   padding-bottom: 6.8rem;
   &__design{
-
+    &-worm{
+      position: absolute;
+      top: 206px;
+      left: 102px;
+    }
+    &-perf{
+      position: absolute;
+      right: 0;
+      top: 90px;
+    }
+    &-ring{
+      position: absolute;
+      left: 0;
+      top: 365px;
+    }
+    &-square{
+      position: absolute;
+      right: 0;
+      top: 416px;
+    }
   }
   &__content{
 
@@ -1373,6 +1486,29 @@ body{
   background-color: $main-bg;
   padding-top: 7.3rem;
   padding-bottom: 5.6rem;
+  position: relative;
+  &__design{
+    &-worm{
+      position: absolute;
+      top: 226px;
+      right: 0;
+    }
+    &-perf{
+      position: absolute;
+      left: 0;
+      top: -88px;
+    }
+    &-ring{
+      position: absolute;
+      left: 0;
+      bottom: -43px;
+    }
+    &-square{
+      position: absolute;
+      right: 165px;
+      top: 71px;
+    }
+  }
   &__title{
     text-align: center;
     background: linear-gradient(89.14deg,#6e2aff 32%,#7adbee 60.25%);
@@ -1410,6 +1546,30 @@ body{
 .contact-us{
   padding-top: 8rem;
   padding-bottom: 11.8rem;
+  position: relative;
+  &__design{
+    &-worm{
+      position: absolute;
+      bottom: 168px;
+      left: 0;
+    }
+    &-perf{
+      position: absolute;
+      left: calc(50% - 273px);
+      bottom: 0;
+      z-index: -1;
+    }
+    &-ring{
+      position: absolute;
+      right: 88px;
+      top: 232px;
+    }
+    &-square{
+      position: absolute;
+      left: 113px;
+      top: 253px;
+    }
+  }
   &__title{
     text-align: center;
   }
