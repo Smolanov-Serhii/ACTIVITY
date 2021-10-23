@@ -2544,7 +2544,7 @@ body{
 .workout-single{
   padding-bottom: 8rem;
 }
-.workout{
+.workout, .trener-sin{
   &__title{
     margin-bottom: 1.7rem;
   }
@@ -2559,7 +2559,7 @@ body{
       max-width: 50%;
       float: right;
       margin-left: 7rem;
-      margin-bottom: 6rem;
+      margin-bottom: 3rem;
       border-radius: 10px;
       &:nth-child(even){
         float: left;
@@ -2624,5 +2624,32 @@ body{
       }
     }
   }
-
+}
+.trener-sin{
+  &__content{
+    img{
+      float: left;
+      margin-left: auto;
+      margin-right: 7rem;
+      margin-bottom: 3rem;
+    }
+    h3{
+      font-weight: 600;
+      font-size: 2.4rem;
+      line-height: 153.9%;
+      color: #132238;
+      margin-bottom: 1.1rem;
+      margin-top: 2.1rem;
+    }
+  }
+  &__skils{
+    span{
+      font-size: 1.8rem;
+      line-height: 122%;
+      font-weight: 400;
+      color: #627289;
+      margin-bottom: 2.1rem;
+      display: inline-block;
+    }
+  }
 }
