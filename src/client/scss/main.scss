@@ -36,13 +36,14 @@ body{
   display: inline-block;
   background: linear-gradient(88.72deg, #6E2AFF 1.13%, #50ABFF 85.23%);
   border-radius: 10px;
-  padding: 2rem 5rem;
+  padding: 2rem 5rem 1.6rem 5rem;
   font-weight: 500;
   font-size: 1.6rem;
   line-height: 101.4%;
   text-transform: uppercase;
   color: #FFFFFF;
   text-decoration: none;
+  cursor: pointer;
 }
 .main-container{
   max-width: 1500px;
@@ -2539,4 +2540,89 @@ body{
       }
     }
   }
+}
+.workout-single{
+  padding-bottom: 8rem;
+}
+.workout{
+  &__title{
+    margin-bottom: 1.7rem;
+  }
+  &__content{
+    &:before, &:after{
+      content: "";
+      clear: both;
+      float: none;
+      display: block;
+    }
+    img{
+      max-width: 50%;
+      float: right;
+      margin-left: 7rem;
+      margin-bottom: 6rem;
+      border-radius: 10px;
+      &:nth-child(even){
+        float: left;
+      }
+    }
+  }
+  &__btn{
+    margin-top: 5rem;
+    text-align: center;
+    margin-bottom: 5.5rem;
+  }
+  &__timetable{
+    position: relative;
+    &__design{
+
+    }
+    &-title{
+      margin-bottom: 3.9rem;
+      text-align: center;
+    }
+    &-content{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      background: #FFFFFF;
+      box-shadow: 0px 12px 39px -10px rgba(190, 203, 223, 0.5);
+      border-radius: 15px;
+      padding: 1.7rem;
+      .timetable__day{
+        position: static;
+        top: auto;
+        left: auto;
+        margin-bottom: 2.3rem;
+      }
+    }
+    &-item{
+      width: 50%;
+      padding: 2.1rem 5.2rem 0 5.2rem;
+      &:nth-child(odd){
+        border-right: 1px solid rgba(190,203,233,0.2);
+      }
+      border-bottom: 1px solid rgba(190,203,233,0.2);
+      &:last-child{
+        border-bottom: none;
+      }
+    }
+    &-row{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &-col{
+      display: flex;
+      flex-direction: column;
+      max-width: calc(33.3333% - 3rem);
+      margin-right: 4rem;
+      margin-bottom: 2.4rem;
+      .timetable__time, .timetable__group{
+        width: 100%;
+      }
+      .timetable__time{
+        margin-bottom: 0.6rem;
+      }
+    }
+  }
+
 }
