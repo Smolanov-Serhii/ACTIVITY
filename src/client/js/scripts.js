@@ -107,13 +107,14 @@ $(document).ready(function($) {
         });
     }
 
-    $("a.header__nav-lnk").on("click", function(e){
-        e.preventDefault();
-        var anchor = $(this).attr('href');
-        $('html, body').stop().animate({
-            scrollTop: $(anchor).offset().top - 0
-        }, 800);
-    });
+
+    // $("a.header__nav-lnk").on("click", function(e){
+    //     e.preventDefault();
+    //     var anchor = $(this).attr('href');
+    //     $('html, body').stop().animate({
+    //         scrollTop: $(anchor).offset().top - 0
+    //     }, 800);
+    // });
 
     if ($('#map').length){
         if (  jQuery(window).width() >= 1024 ) {
