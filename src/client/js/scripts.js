@@ -18,6 +18,21 @@ $(document).ready(function($) {
         });
     }
 
+    if ($('#publications').length){
+        var MainSlider = new Swiper('#publications .swiper-container', {
+            slidesPerView: 2,
+            loop: true,
+            observer: true,
+            spaceBetween: 52,
+            observeParents: true,
+            lazy: true,
+            pagination: {
+                el: "#publications .swiper-pagination",
+                clickable: true,
+            }
+        });
+    }
+
     if ($('.tabs__content-slider').length){
         var TabsSlider = new Swiper('.tabs__content-slider', {
             slidesPerView: 1,

@@ -588,14 +588,15 @@ body{
   }
   &__list{
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    margin-right: -20px;
     padding-top: 3.4rem;
   }
   &__item{
-    width: calc(25% - 10px);
+    width: calc(25% - 20px);
     text-align: center;
     margin-bottom: 3.8rem;
+    margin-right: 20px;
     &-title{
       font-weight: 500;
       font-size: 1.8rem;
@@ -2650,6 +2651,49 @@ body{
       color: #627289;
       margin-bottom: 2.1rem;
       display: inline-block;
+    }
+  }
+}
+#publications{
+  margin-top: 8rem;
+  .publications__title{
+    position: relative;
+  }
+  .publications__list{
+    width: 100%;
+    margin-right: 0;
+  }
+  .publications__all{
+    position: absolute;
+    top: 1.4rem;
+    right: 0;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 139.4%;
+    color: #6E2AFF;
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing: normal;
+    svg{
+      margin-left: 10px;
+    }
+  }
+  .swiper-pagination{
+    margin: 0.5rem auto 0 auto;
+    position: static;
+    display: flex;
+    justify-content: center;
+    .swiper-pagination-bullet{
+      background: #627289;
+      opacity: 0.3;
+      width: 10px;
+      height: 10px;
+      margin: 0 7px;
+      transition: 0.2s;
+      &.swiper-pagination-bullet-active{
+        width: 26px;
+        opacity: 1;
+      }
     }
   }
 }
